@@ -333,6 +333,13 @@
     to { opacity: 1; transform: scale(1); }
   }
   .hero-portrait svg { width: 100%; height: 100%; display: block; }
+  .hero-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
   .portrait-badge {
     position: absolute;
     bottom: 20px; left: 20px;
@@ -353,9 +360,12 @@
   .portrait-circle text {
     font-family: var(--mono);
     font-size: 9.5px;
-    fill: var(--bg);
+    fill: #ffffff;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    paint-order: stroke;
+    stroke: rgba(0,0,0,0.4);
+    stroke-width: 0.3px;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -1189,6 +1199,13 @@
     flex-shrink: 0;
   }
   .contact-portrait svg { width: 100%; height: 100%; }
+  .contact-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
   .contact-form-head h3 {
     font-family: var(--display);
     font-size: 1.2rem;
@@ -1380,48 +1397,7 @@
         </div>
 
         <div class="hero-portrait">
-          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#e8e3f0"/>
-                <stop offset="100%" stop-color="#a08770"/>
-              </linearGradient>
-              <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1a1530"/>
-                <stop offset="100%" stop-color="#0c0a14"/>
-              </linearGradient>
-              <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#f4eaff"/>
-                <stop offset="100%" stop-color="#c4b5fd"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="500" fill="url(#bgGrad)"/>
-            <!-- Body / shoulders -->
-            <path d="M 60 500 Q 60 380 130 350 Q 200 320 270 350 Q 340 380 340 500 Z" fill="#1a1530"/>
-            <path d="M 130 360 Q 200 340 270 360 L 270 410 Q 200 395 130 410 Z" fill="#251f3a"/>
-            <!-- Neck -->
-            <rect x="175" y="270" width="50" height="80" fill="url(#skinGrad)"/>
-            <!-- Hair back -->
-            <path d="M 110 240 Q 90 130 200 110 Q 310 130 290 240 Q 290 280 280 290 L 270 270 Q 290 200 200 180 Q 110 200 130 270 L 120 290 Q 110 280 110 240 Z" fill="url(#hairGrad)"/>
-            <!-- Face -->
-            <ellipse cx="200" cy="220" rx="78" ry="95" fill="url(#skinGrad)"/>
-            <!-- Hair front -->
-            <path d="M 122 200 Q 130 145 200 135 Q 270 145 278 200 Q 270 175 250 165 Q 230 188 200 188 Q 170 188 150 165 Q 130 175 122 200 Z" fill="url(#hairGrad)"/>
-            <!-- Brows -->
-            <path d="M 162 195 Q 175 190 188 196" stroke="#15121f" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M 212 196 Q 225 190 238 195" stroke="#15121f" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <!-- Eyes -->
-            <ellipse cx="174" cy="215" rx="5" ry="3" fill="#15121f"/>
-            <ellipse cx="226" cy="215" rx="5" ry="3" fill="#15121f"/>
-            <!-- Nose -->
-            <path d="M 200 220 Q 195 245 200 252 Q 205 248 208 245" stroke="#8b6dff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <!-- Lips -->
-            <path d="M 188 268 Q 200 273 212 268 Q 200 278 188 268 Z" fill="#6b46ff"/>
-            <!-- Earring -->
-            <circle cx="125" cy="235" r="3" fill="#a78bfa"/>
-            <!-- Subtle highlight -->
-            <ellipse cx="170" cy="195" rx="20" ry="14" fill="#fff" opacity="0.08"/>
-          </svg>
+          <img src="https://github.com/LowKi-07/portfolio/blob/main/Assets/Profile-dp.jpg?raw=true" alt="Kishore — Senior Product Designer" class="hero-portrait-img" />
           <div class="portrait-badge">📍 Bangalore, IN</div>
           <svg class="portrait-circle" viewBox="0 0 100 100">
             <defs>
@@ -2477,25 +2453,7 @@
         <div class="contact-form-wrap">
           <div class="contact-form-head">
             <div class="contact-portrait">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="cpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#e8e3f0"/>
-                    <stop offset="100%" stop-color="#a08770"/>
-                  </linearGradient>
-                  <linearGradient id="cpSkin" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#f4eaff"/>
-                    <stop offset="100%" stop-color="#c4b5fd"/>
-                  </linearGradient>
-                </defs>
-                <rect width="100" height="100" fill="url(#cpGrad)"/>
-                <path d="M 10 100 Q 10 76 30 70 Q 50 64 70 70 Q 90 76 90 100 Z" fill="#1a1530"/>
-                <ellipse cx="50" cy="50" rx="22" ry="26" fill="url(#cpSkin)"/>
-                <path d="M 28 45 Q 30 28 50 26 Q 70 28 72 45 Q 68 38 60 36 Q 55 44 50 44 Q 45 44 40 36 Q 32 38 28 45 Z" fill="#1a1530"/>
-                <ellipse cx="42" cy="48" rx="1.5" ry="1" fill="#15121f"/>
-                <ellipse cx="58" cy="48" rx="1.5" ry="1" fill="#15121f"/>
-                <path d="M 46 60 Q 50 62 54 60" stroke="#6b46ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              </svg>
+              <img src="https://github.com/LowKi-07/portfolio/blob/main/Assets/Profile-dp.jpg?raw=true" alt="Kishore" class="contact-portrait-img" />
             </div>
             <div>
               <h3>Or send a brief.</h3>
